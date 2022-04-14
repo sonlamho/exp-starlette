@@ -4,7 +4,7 @@ from starlette.responses import PlainTextResponse, JSONResponse
 from starlette.routing import Route
 
 
-LOG_FILE = "./log.txt"
+LOG_FILE = "./log3.txt"
 
 
 async def app(scope, receive, send):
