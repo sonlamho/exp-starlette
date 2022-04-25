@@ -15,7 +15,7 @@ def root(request: Request):
         f.write(repr(request.query_params))
         f.write("\n------------------")
 
-    return JSONResponse({"hello": "world", "x": 123123})
+    return JSONResponse({"hello": "world", "x": 123123, "example": 4})
 
 
 app = Starlette(

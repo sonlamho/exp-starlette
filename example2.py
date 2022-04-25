@@ -6,5 +6,5 @@ from starlette.routing import Route
 
 async def app(scope, receive, send):
     assert scope["type"] == "http"
-    response = JSONResponse({"hello": "world", "x": 1234})
+    response = JSONResponse({"hello": "world", "x": 1234, "example": 2})
     await response(scope, receive, send)

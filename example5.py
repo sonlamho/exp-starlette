@@ -8,7 +8,7 @@ from typing import Any
 import orjson
 
 
-LOG_FILE = "./log4.txt"
+LOG_FILE = "./log5.txt"
 
 OPT = orjson.OPT_NAIVE_UTC | orjson.OPT_SERIALIZE_NUMPY
 
@@ -36,15 +36,17 @@ def root(request: Request):
         f.write(repr(request.headers))
         f.write("\n------------------")
         f.write(repr(request.query_params))
+        s = request.query_params._dict
+        f.write(str(s))
         f.write("\n------------------")
 
     return MyJSONResponse(
         {
-            "hello": "world",
+            "example": 5,
             "x": np.int32(123123),
             "now": datetime.now(),
             "today": datetime.now().date(),
-            "arr": np.array([1.3, 5.6, 3.3], dtype='float32'),
+            "arr": np.array([1.3, 5.6, 3.3], dtype="float32"),
         }
     )
 
