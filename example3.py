@@ -24,5 +24,5 @@ async def app(scope, receive, send):
         f.write(request.headers["host"] + "\n" + request.headers["user-agent"])
         f.write("\n------------------")
 
-    response = JSONResponse({"hello": "world", "x": 1234})
+    response = JSONResponse({"hello": "world", "x": 1234, "example": 3})
     await response(scope, receive, send)
